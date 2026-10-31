@@ -1,0 +1,466 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#100914">
+<title>خليني في حضنك يا حبيبي ❤️</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap');
+
+:root {
+  --pink:#ff8fb8;
+  --cream:#ffe7ef;
+  --gold:#f7d58b;
+  --bg:#100914;
+}
+
+* {box-sizing:border-box}
+
+html {scroll-behavior:smooth}
+
+body {
+  margin:0;
+  background:radial-gradient(ellipse at 50% 0%,#482039 0%,#1d1020 42%,var(--bg) 100%);
+  color:#fff;
+  font-family:'Cairo',sans-serif;
+  overflow-x:hidden;
+  min-height:100vh;
+}
+
+body:before {
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  opacity:.17;
+  background-image:radial-gradient(#fff 1px,transparent 1px);
+  background-size:35px 35px;
+  z-index:0;
+}
+
+main {
+  position:relative;
+  z-index:1;
+  max-width:850px;
+  margin:auto;
+  padding:26px 17px 70px;
+  text-align:center;
+}
+
+.kicker {
+  color:var(--gold);
+  letter-spacing:2px;
+  font-size:12px;
+  margin-top:14px;
+}
+
+.hero {
+  min-height:76vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:30px 0;
+}
+
+h1 {
+  font-size:clamp(32px,8vw,64px);
+  line-height:1.35;
+  margin:10px 0;
+  color:var(--cream);
+  text-shadow:0 0 28px #ff6fa477;
+  animation:glow 3s ease-in-out infinite alternate;
+}
+
+.subtitle {
+  font-size:15px;
+  color:#eacbd7;
+  margin:5px 0 25px;
+}
+
+.enter {
+  border:1px solid #ffc1d6;
+  background:linear-gradient(135deg,#ff9cbe,#a83e72);
+  color:white;
+  border-radius:50px;
+  padding:14px 27px;
+  font:700 16px 'Cairo';
+  box-shadow:0 10px 35px #ed5d9a55;
+  cursor:pointer;
+  transition:.25s;
+}
+
+.enter:active {transform:scale(.96)}
+
+.note {
+  font-size:12px;
+  color:#c9a9b8;
+  margin-top:13px;
+}
+
+.section-title {
+  font-size:26px;
+  color:var(--cream);
+  margin:35px 0 5px;
+}
+
+.section-sub {
+  font-size:13px;
+  color:#c9a9b8;
+  margin:0 0 22px;
+}
+
+.gallery {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:14px;
+  perspective:1000px;
+}
+
+.photo {
+  position:relative;
+  overflow:hidden;
+  border-radius:20px;
+  aspect-ratio:3/4;
+  background:#2a1726;
+  border:1px solid #ffffff25;
+  box-shadow:0 15px 35px #0008;
+  transform:translateY(28px) scale(.96);
+  opacity:0;
+  transition:opacity .8s,transform .8s;
+  isolation:isolate;
+}
+
+.photo.show {
+  opacity:1;
+  transform:translateY(0) scale(1);
+}
+
+.photo:nth-child(odd) {margin-top:18px}
+
+.photo img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  transition:transform 1.1s cubic-bezier(.2,.7,.2,1),filter .7s;
+}
+
+.photo:hover img {
+  transform:scale(1.1) rotate(-1deg);
+  filter:saturate(1.12);
+}
+
+.photo:after {
+  content:"";
+  position:absolute;
+  inset:35% 0 0;
+  background:linear-gradient(transparent,#100914b8);
+  z-index:1;
+}
+
+.tag {
+  position:absolute;
+  z-index:2;
+  bottom:12px;
+  right:12px;
+  left:12px;
+  text-align:right;
+  color:#fff;
+  font-weight:700;
+  font-size:13px;
+  text-shadow:0 2px 8px #000;
+}
+
+.caption {
+  margin:40px auto 20px;
+  padding:20px 16px;
+  border:1px solid #f7c7d533;
+  border-radius:22px;
+  background:#ffffff09;
+  max-width:620px;
+  backdrop-filter:blur(8px);
+}
+
+.caption strong {
+  display:block;
+  color:var(--gold);
+  font-size:21px;
+  margin-bottom:7px;
+}
+
+.caption p {
+  margin:0;
+  color:#f3dce6;
+  line-height:2;
+}
+
+.final {
+  margin:45px 0 15px;
+  font-size:clamp(23px,6vw,39px);
+  font-weight:900;
+  color:#ffd6e4;
+  text-shadow:0 0 25px #ff7eae77;
+}
+
+.signature {
+  color:#c9a9b8;
+  font-size:12px;
+}
+
+.heart {
+  position:fixed;
+  bottom:-30px;
+  z-index:3;
+  pointer-events:none;
+  animation:floatUp linear forwards;
+  text-shadow:0 0 12px #ff8fb8;
+}
+
+.controls {
+  position:fixed;
+  bottom:15px;
+  left:15px;
+  z-index:10;
+  display:none;
+}
+
+.controls button {
+  background:#2b1426dd;
+  color:#fff;
+  border:1px solid #ffc1d655;
+  border-radius:30px;
+  padding:10px 15px;
+  font:600 12px 'Cairo';
+  backdrop-filter:blur(8px);
+}
+
+@keyframes glow {
+  from {text-shadow:0 0 14px #ff6fa444}
+  to {text-shadow:0 0 35px #ff6fa4bb,0 0 60px #ff6fa455}
+}
+
+@keyframes floatUp {
+  to {
+    transform:translateY(-110vh) rotate(35deg);
+    opacity:0;
+  }
+}
+
+@media(min-width:650px) {
+  .gallery {
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:18px;
+  }
+  .photo:nth-child(odd) {margin-top:0}
+  .photo:nth-child(3n+2) {margin-top:28px}
+}
+
+@media(prefers-reduced-motion:reduce) {
+  *,*:before,*:after {
+    animation:none!important;
+    transition:none!important;
+    scroll-behavior:auto!important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<audio id="song" loop preload="none">
+<source src="https://raw.githubusercontent.com/empiresilver39-afk/Song/refs/heads/main/Albumaty.Com_Tamer_Ashour_Khalini.mp3" type="audio/mpeg">
+</audio>
+
+<main>
+
+<section class="hero" id="top">
+  <div class="kicker">حكاية من ست صور… ومشاعر كتير ❤️</div>
+
+  <h1>خليني في حضنك<br>يا حبيبي</h1>
+
+  <p class="subtitle">
+    في ناس وجودها لوحده بيخلّي الدنيا أحنّ.
+  </p>
+
+  <button class="enter" id="start">
+    افتح الذكريات ❤️
+  </button>
+
+  <div class="note">
+    ارفع الصوت… واستعد للجرعة الرومانسية
+  </div>
+</section>
+
+<section id="memories">
+
+<h2 class="section-title">شوية لحظات حلوة</h2>
+
+<p class="section-sub">
+كل صورة وراها حكاية… أو على الأقل لقطة تستاهل تتصور 😂
+</p>
+
+<div class="gallery">
+
+<figure class="photo">
+<img src="https://i.ibb.co/xqG1BTL6/IMG-7912.jpg" alt="ذكرى 1" loading="lazy">
+<figcaption class="tag">أول لقطة… والقلب قال يا سلام ❤️</figcaption>
+</figure>
+
+<figure class="photo">
+<img src="https://i.ibb.co/rRTfT0XR/IMG-7913.jpg" alt="ذكرى 2" loading="lazy">
+<figcaption class="tag">الرومانسية بدأت تزيد 🎬</figcaption>
+</figure>
+
+<figure class="photo">
+<img src="https://i.ibb.co/SwkPbk76/IMG-7914.jpg" alt="ذكرى 3" loading="lazy">
+<figcaption class="tag">نظرات فيها كلام كتير</figcaption>
+</figure>
+
+<figure class="photo">
+<img src="https://i.ibb.co/Fb8Vht7k/IMG-7915.jpg" alt="ذكرى 4" loading="lazy">
+<figcaption class="tag">لقطة من فيلم… بميزانية صفر 😂</figcaption>
+</figure>
+
+<figure class="photo">
+<img src="https://i.ibb.co/hqY5Hft/IMG-7916.jpg" alt="ذكرى 5" loading="lazy">
+<figcaption class="tag">يا بخت الكاميرا باللحظة دي</figcaption>
+</figure>
+
+<figure class="photo">
+<img src="https://i.ibb.co/Z6HQBy9g/IMG-7918.jpg" alt="ذكرى 6" loading="lazy">
+<figcaption class="tag">والختام مسك يا نجم ✨</figcaption>
+</figure>
+
+</div>
+</section>
+
+<section class="caption">
+<strong>وبعيدًا عن الهزار…</strong>
+
+<p>
+في لحظات صغيرة بتفضل عايشة جوانا،
+وصور عادية بتبقى غالية عشان الناس اللي فيها.
+خليك دايمًا سبب ضحكة وذكرى حلوة ❤️
+</p>
+</section>
+
+<div class="final">
+يا رب الحكاية الحلوة<br>
+تفضل مكملة ❤️
+</div>
+
+<div class="signature">
+اتعملت بمحبة… وبشوية شقاوة 😂
+</div>
+
+</main>
+
+<div class="controls" id="controls">
+<button id="musicToggle">إيقاف الأغنية ⏸</button>
+</div>
+
+<script>
+
+const song = document.getElementById('song');
+const start = document.getElementById('start');
+const controls = document.getElementById('controls');
+const toggle = document.getElementById('musicToggle');
+
+let playing = false;
+
+start.addEventListener('click', async () => {
+
+  document.getElementById('memories').scrollIntoView({
+    behavior:'smooth'
+  });
+
+  try {
+    await song.play();
+    playing = true;
+    controls.style.display = 'block';
+    toggle.textContent = 'إيقاف الأغنية ⏸';
+  } catch(e) {
+    controls.style.display = 'block';
+    toggle.textContent = 'تشغيل الأغنية ▶';
+  }
+
+  document.querySelectorAll('.photo').forEach((el,i) => {
+    setTimeout(() => el.classList.add('show'),i*180);
+  });
+
+  burstHearts(22);
+
+});
+
+toggle.addEventListener('click', async () => {
+
+  if(playing) {
+    song.pause();
+    playing = false;
+    toggle.textContent = 'تشغيل الأغنية ▶';
+  } else {
+    try {
+      await song.play();
+      playing = true;
+      toggle.textContent = 'إيقاف الأغنية ⏸';
+    } catch(e) {
+      toggle.textContent = 'جرّب تاني ▶';
+    }
+  }
+
+});
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting) {
+      entry.target.classList.add('show');
+    }
+  });
+},{threshold:.12});
+
+document.querySelectorAll('.photo').forEach(el => {
+  observer.observe(el);
+});
+
+function burstHearts(count) {
+
+  for(let i=0;i<count;i++) {
+
+    setTimeout(() => {
+
+      const h = document.createElement('span');
+
+      h.className = 'heart';
+
+      h.textContent = ['❤️','💕','💗','✨'][
+        Math.floor(Math.random()*4)
+      ];
+
+      h.style.left = Math.random()*100+'vw';
+
+      h.style.fontSize = (16+Math.random()*22)+'px';
+
+      h.style.animationDuration = (4+Math.random()*4)+'s';
+
+      document.body.appendChild(h);
+
+      setTimeout(() => h.remove(),8500);
+
+    },i*100);
+
+  }
+
+}
+
+setInterval(() => {
+  if(Math.random()>.35) burstHearts(1);
+},1800);
+
+</script>
+
+</body>
+</html>
