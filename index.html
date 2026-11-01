@@ -18,7 +18,6 @@
 }
 
 * {box-sizing:border-box}
-
 html {scroll-behavior:smooth}
 
 body {
@@ -279,59 +278,45 @@ h1 {
 
 <section class="hero" id="top">
   <div class="kicker">حكاية من ست صور… ومشاعر كتير ❤️</div>
-
   <h1>خليني في حضنك<br>يا حبيبي</h1>
-
-  <p class="subtitle">
-    في ناس وجودها لوحده بيخلّي الدنيا أحنّ.
-  </p>
-
-  <button class="enter" id="start">
-    افتح الذكريات ❤️
-  </button>
-
-  <div class="note">
-    ارفع الصوت… واستعد للجرعة الرومانسية
-  </div>
+  <p class="subtitle">في ناس وجودها لوحده بيخلّي الدنيا أحنّ.</p>
+  <button class="enter" id="start">افتح الذكريات ❤️</button>
+  <div class="note">ارفع الصوت… واستعد للجرعة الرومانسية</div>
 </section>
 
 <section id="memories">
-
 <h2 class="section-title">شوية لحظات حلوة</h2>
-
-<p class="section-sub">
-كل صورة وراها حكاية… أو على الأقل لقطة تستاهل تتصور 😂
-</p>
+<p class="section-sub">كل صورة وراها حكاية… أو على الأقل لقطة تستاهل تتصور 😂</p>
 
 <div class="gallery">
 
 <figure class="photo">
-<img src="https://i.ibb.co/xqG1BTL6/IMG-7912.jpg" alt="ذكرى 1" loading="lazy">
+<img src="https://raw.githubusercontent.com/empiresilver39-afk/Salma/refs/heads/main/IMG_7912.jpeg" alt="ذكرى 1" loading="lazy">
 <figcaption class="tag">أول لقطة… والقلب قال يا سلام ❤️</figcaption>
 </figure>
 
 <figure class="photo">
-<img src="https://i.ibb.co/rRTfT0XR/IMG-7913.jpg" alt="ذكرى 2" loading="lazy">
+<img src="https://raw.githubusercontent.com/empiresilver39-afk/Salma/refs/heads/main/IMG_7913.jpeg" alt="ذكرى 2" loading="lazy">
 <figcaption class="tag">الرومانسية بدأت تزيد 🎬</figcaption>
 </figure>
 
 <figure class="photo">
-<img src="https://i.ibb.co/SwkPbk76/IMG-7914.jpg" alt="ذكرى 3" loading="lazy">
+<img src="https://raw.githubusercontent.com/empiresilver39-afk/Salma/refs/heads/main/IMG_7914.jpeg" alt="ذكرى 3" loading="lazy">
 <figcaption class="tag">نظرات فيها كلام كتير</figcaption>
 </figure>
 
 <figure class="photo">
-<img src="https://i.ibb.co/Fb8Vht7k/IMG-7915.jpg" alt="ذكرى 4" loading="lazy">
+<img src="https://raw.githubusercontent.com/empiresilver39-afk/Salma/refs/heads/main/IMG_7915.jpeg" alt="ذكرى 4" loading="lazy">
 <figcaption class="tag">لقطة من فيلم… بميزانية صفر 😂</figcaption>
 </figure>
 
 <figure class="photo">
-<img src="https://i.ibb.co/hqY5Hft/IMG-7916.jpg" alt="ذكرى 5" loading="lazy">
+<img src="https://raw.githubusercontent.com/empiresilver39-afk/Salma/refs/heads/main/IMG_7916.jpeg" alt="ذكرى 5" loading="lazy">
 <figcaption class="tag">يا بخت الكاميرا باللحظة دي</figcaption>
 </figure>
 
 <figure class="photo">
-<img src="https://i.ibb.co/Z6HQBy9g/IMG-7918.jpg" alt="ذكرى 6" loading="lazy">
+<img src="https://raw.githubusercontent.com/empiresilver39-afk/Salma/refs/heads/main/IMG_7918.jpeg" alt="ذكرى 6" loading="lazy">
 <figcaption class="tag">والختام مسك يا نجم ✨</figcaption>
 </figure>
 
@@ -340,7 +325,6 @@ h1 {
 
 <section class="caption">
 <strong>وبعيدًا عن الهزار…</strong>
-
 <p>
 في لحظات صغيرة بتفضل عايشة جوانا،
 وصور عادية بتبقى غالية عشان الناس اللي فيها.
@@ -353,9 +337,7 @@ h1 {
 تفضل مكملة ❤️
 </div>
 
-<div class="signature">
-اتعملت بمحبة… وبشوية شقاوة 😂
-</div>
+<div class="signature">اتعملت بمحبة… وبشوية شقاوة 😂</div>
 
 </main>
 
@@ -364,7 +346,6 @@ h1 {
 </div>
 
 <script>
-
 const song = document.getElementById('song');
 const start = document.getElementById('start');
 const controls = document.getElementById('controls');
@@ -373,10 +354,7 @@ const toggle = document.getElementById('musicToggle');
 let playing = false;
 
 start.addEventListener('click', async () => {
-
-  document.getElementById('memories').scrollIntoView({
-    behavior:'smooth'
-  });
+  document.getElementById('memories').scrollIntoView({behavior:'smooth'});
 
   try {
     await song.play();
@@ -393,11 +371,9 @@ start.addEventListener('click', async () => {
   });
 
   burstHearts(22);
-
 });
 
 toggle.addEventListener('click', async () => {
-
   if(playing) {
     song.pause();
     playing = false;
@@ -411,7 +387,6 @@ toggle.addEventListener('click', async () => {
       toggle.textContent = 'جرّب تاني ▶';
     }
   }
-
 });
 
 const observer = new IntersectionObserver(entries => {
@@ -422,44 +397,26 @@ const observer = new IntersectionObserver(entries => {
   });
 },{threshold:.12});
 
-document.querySelectorAll('.photo').forEach(el => {
-  observer.observe(el);
-});
+document.querySelectorAll('.photo').forEach(el => observer.observe(el));
 
 function burstHearts(count) {
-
   for(let i=0;i<count;i++) {
-
     setTimeout(() => {
-
       const h = document.createElement('span');
-
       h.className = 'heart';
-
-      h.textContent = ['❤️','💕','💗','✨'][
-        Math.floor(Math.random()*4)
-      ];
-
+      h.textContent = ['❤️','💕','💗','✨'][Math.floor(Math.random()*4)];
       h.style.left = Math.random()*100+'vw';
-
       h.style.fontSize = (16+Math.random()*22)+'px';
-
       h.style.animationDuration = (4+Math.random()*4)+'s';
-
       document.body.appendChild(h);
-
       setTimeout(() => h.remove(),8500);
-
     },i*100);
-
   }
-
 }
 
 setInterval(() => {
   if(Math.random()>.35) burstHearts(1);
 },1800);
-
 </script>
 
 </body>
